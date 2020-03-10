@@ -42,6 +42,7 @@ for i in range(1,4):
 qubo_model = BQM.from_qubo(Q)
 ising_model = qubo_model.to_ising()
 
+input()
 print("\nConverting QUBO to Ising ...")
 
 print("\nIsing:\n")
@@ -57,6 +58,7 @@ for i in range(1,4):
             row = row + str(ising_model[1][(i,j)]) + '\t'
     print(row)
 
+input()
 print("\nEmbedding logical problem into physical layout ...")
 
 # Construct logical problem graph
@@ -93,6 +95,7 @@ h_vals = np.abs(np.asarray([max(th.values()),min(th.values())]))/2
 # Find our scale factor
 scale_factor = np.max(np.concatenate([J_vals, h_vals]))
 
+input()
 print("\nScaling physical problem by", scale_factor, "...")
 
 print("\nQMI (scaled):\n")
@@ -111,6 +114,7 @@ for i in range(1,5):
             row = row + str(0) + '\t'
     print(row)
 
+input()
 print("\nSending problem to QPU...")
 
 sampler = EmbeddingComposite(DWaveSampler()) # Use EmbeddingComposite to work around any missing qubits
@@ -121,15 +125,17 @@ print("\nBest QMI solution found:\n")
 best_QMI_solution = sampleset.first.sample
 print(best_QMI_solution)
 
+input()
 print("\nConverting QMI solution to Ising ...")
 
 best_Ising_solution = dict(best_QMI_solution)
 del best_Ising_solution[4]
+
 print("\nBest Ising solution found:\n")
 print(best_Ising_solution)
 
-
-print("\nComverting Ising solution to QUBO ...")
+input()
+print("\nConverting Ising solution to QUBO ...")
 
 best_QUBO_solution = dict(best_Ising_solution)
 for key, val in best_QUBO_solution.items():
