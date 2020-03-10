@@ -117,7 +117,7 @@ for i in range(1,5):
 input()
 print("\nSending problem to QPU...")
 
-sampler = EmbeddingComposite(DWaveSampler()) # Use EmbeddingComposite to work around any missing qubits
+sampler = EmbeddingComposite(DWaveSampler(solver={'qpu': True})) # Use EmbeddingComposite to work around any missing qubits
 sampleset = sampler.sample_ising(th, tJ, num_reads=10)
 
 print("\nBest QMI solution found:\n")
