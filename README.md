@@ -20,7 +20,7 @@ Note that we use the default chain strength value in this program (value of 1).
 
 ## Exercise
 
-First, run the program as is.  Hit any key to continue to the next output as the program runs.
+First, run the program as is.  Hit return (enter) to continue to the next output as the program runs.
 
 Next, try modifying the program to incorporate chain strength so that we don't see any chain breaks.  
 
