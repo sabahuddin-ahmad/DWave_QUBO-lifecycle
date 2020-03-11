@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import numpy as np
 from collections import defaultdict
 from dimod import BinaryQuadraticModel as BQM
 import networkx as nx
@@ -34,14 +33,15 @@ for i in range(1,4):
     row = ''
     for j in range(1,4):
         if (i,j) in Q:
-            row = row + str(Q[(i,j)])+'\t'
+            row += str(Q[(i,j)])+'\t'
         else:
-            row = row + str(0) + '\t'
+            row += str(0) + '\t'
     print(row)
 
 qubo_model = BQM.from_qubo(Q)
 ising_model = qubo_model.to_ising()
 
+# Pause for the user to hint <enter> to continue
 input()
 print("\nConverting QUBO to Ising ...")
 
@@ -51,11 +51,11 @@ for i in range(1,4):
     row = ''
     for j in range(1,4):
         if j<i:
-            row = row + str(0) + '\t'
+            row += str(0) + '\t'
         elif j==i:
-            row = row + str(ising_model[0][i]) + '\t'
+            row += str(ising_model[0][i]) + '\t'
         else:
-            row = row + str(ising_model[1][(i,j)]) + '\t'
+            row += str(ising_model[1][(i,j)]) + '\t'
     print(row)
 
 input()
@@ -79,21 +79,21 @@ for i in range(1,5):
     row = ''
     for j in range(1,5):
         if j==i:
-            row = row + str(th[i]) + '\t'
+            row += str(th[i]) + '\t'
         elif (i,j) in tJ:
-            row = row + str(tJ[(i,j)]) + '\t'
+            row += str(tJ[(i,j)]) + '\t'
         else:
-            row = row + str(0) + '\t'
+            row += str(0) + '\t'
     print(row)
 
 # J range is -1, +1
-J_vals = np.abs(np.asarray([max(tJ.values()),min(tJ.values())]))
+max_j = max(list(map(abs, tJ.values())))
 
 # h range is -2, +2
-h_vals = np.abs(np.asarray([max(th.values()),min(th.values())]))/2
+max_h = max(list(map(abs, th.values()))) / 2
 
 # Find our scale factor
-scale_factor = np.max(np.concatenate([J_vals, h_vals]))
+scale_factor = max(max_j, max_h)
 
 input()
 print("\nScaling physical problem by", scale_factor, "...")
@@ -106,12 +106,12 @@ for i in range(1,5):
     for j in range(1,5):
         if j==i:
             th[i] = th[i]/scale_factor
-            row = row + str(round(th[i], 2)) + '\t'
+            row += str(round(th[i], 2)) + '\t'
         elif (i,j) in tJ:
             tJ[(i,j)] = tJ[(i,j)]/scale_factor
-            row = row + str(round(tJ[(i,j)], 2)) + '\t'
+            row += str(round(tJ[(i,j)], 2)) + '\t'
         else:
-            row = row + str(0) + '\t'
+            row += str(0) + '\t'
     print(row)
 
 input()
@@ -129,7 +129,7 @@ input()
 print("\nConverting QMI solution to Ising ...")
 
 best_Ising_solution = dict(best_QMI_solution)
-del best_Ising_solution[4]
+del best_Ising_solution[4] # Resolve a potential chain break 
 
 print("\nBest Ising solution found:\n")
 print(best_Ising_solution)
