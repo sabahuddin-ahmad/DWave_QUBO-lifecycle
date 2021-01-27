@@ -20,8 +20,19 @@ Note that we use the default chain strength value in this program (value of 1).
 
 ## Exercise
 
-First, run the program as is.  Hit return (enter) to continue to the next output as the program runs.
+First, run the program as is.  Hit return (enter) to continue to the next 
+output as the program runs.
 
-Next, try modifying the program to incorporate chain strength so that we don't see any chain breaks.  
+Second, consider the 3-boxes problem shown here:
+![3-boxes problem][readme_imgs/basic_problem.png "3-boxes problem"]
 
-Hint: look at the Ocean documentation to figure out an easy way to adjust the chain strength.
+Set the Lagrange parameter to 24. Write out your new QUBO as shown.
+
+Next, do the algebra, and write down your new QUBO.
+
+Fourth, replace the values on lines 24-29, with the values from your new 
+QUBO.
+
+Fifth, run the program.
+
+Sixth, 
