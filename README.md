@@ -27,7 +27,11 @@ Second, consider the 3-boxes problem shown here:
 
 ![3-boxes problem](readme_imgs/basic_problem.png "3-boxes problem")
 
-Set the Lagrange parameter to 24. Write out your new QUBO as shown.
+As a QUBO, this is written:
+
+![3-boxes QUBO](readme_imgs/basic_qubo.png "3-boxes QUBO")
+
+Write down your new QUBO, with the Lagrange parameter set to 24.
 
 Next, do the algebra, and write down your new QUBO.
 
