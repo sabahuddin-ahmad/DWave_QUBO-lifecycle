@@ -8,7 +8,7 @@ This program takes a 3-variable QUBO function and demonstrates what goes on
 
 1. The original QUBO.
 2. The equivalent Ising form.
-3. An Ising form embedded onto the QPU architecture using four qubits.
+3. The Ising form embedded onto the QPU architecture using four qubits.
 4. A scaled version of the embedded Ising form that is the final QMI.
 
 At this point, the problem is run on the D-Wave QPU.  When a solution is 
