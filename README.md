@@ -3,14 +3,16 @@ Demonstrates what happens when you send a QUBO to the D-Wave QPU
 
 ## Overview
 
-This program takes a 3-variable QUBO function and demonstrates what goes on "behind the scenes" as it runs on the QPU.  We see:
+This program takes a 3-variable QUBO function and demonstrates what goes on 
+"behind the scenes" as it runs on the QPU.  We see:
 
 1. The original QUBO.
 2. The equivalent Ising form.
-3. An embedded Ising form onto the QPU architecture using four qubits.
+3. The Ising form embedded onto the QPU architecture using four qubits.
 4. A scaled version of the embedded Ising form that is the final QMI.
 
-At this point, the problem is run on the D-Wave QPU.  When a solution is returned, we see:
+At this point, the problem is run on the D-Wave QPU.  When a solution is 
+returned, we see:
 
 5. The QMI solution (embedded Ising solution).
 6. The unembedded Ising solution, with any chain breaks resolved.
@@ -20,8 +22,25 @@ Note that we use the default chain strength value in this program (value of 1).
 
 ## Exercise
 
-First, run the program as is.  Hit return (enter) to continue to the next output as the program runs.
+First, run the program as is.  Hit return (enter) to continue to the next 
+output as the program runs.
 
-Next, try modifying the program to incorporate chain strength so that we don't see any chain breaks.  
+Second, consider the 3-boxes problem shown here:
 
-Hint: look at the Ocean documentation to figure out an easy way to adjust the chain strength.
+![3-boxes problem](readme_imgs/basic_problem.jpeg "3-boxes problem")
+
+As a QUBO, this is written:
+
+![3-boxes QUBO](readme_imgs/basic_qubo.png "3-boxes QUBO")
+
+Write down your new QUBO, with the Lagrange parameter set to 24.
+
+Third, do the algebra, and write down your new QUBO.
+
+Fourth, in the program for this unit, replace the values on lines 24-29, with 
+the values from your new QUBO.
+
+Fifth, run the program.
+
+Sixth, check through the results, and make sure that you understand them,
+compared to what you found in the first step.
