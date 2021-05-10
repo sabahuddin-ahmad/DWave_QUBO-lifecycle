@@ -25,7 +25,11 @@ Note that we use the default chain strength value in this program (value of 1).
 First, run the program as is.  Hit return (enter) to continue to the next 
 output as the program runs.
 
-Second, consider the 3-boxes problem shown here:
+Second, consider the following 3-boxes problem.
+
+Problem:
+
+Pick the pair of boxes with the smallest sum.
 
 ![3-boxes problem](readme_imgs/basic_problem.jpeg "3-boxes problem")
 
