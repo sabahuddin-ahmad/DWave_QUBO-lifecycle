@@ -31,7 +31,7 @@ Problem:
 
 Pick the pair of boxes with the smallest sum.
 
-![3-boxes problem](readme_imgs/basic_problem.jpeg "3-boxes problem")
+![3-boxes problem](readme_imgs/basic_problem.png "3-boxes problem")
 
 As a QUBO, this is written:
 
