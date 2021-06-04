@@ -48,3 +48,7 @@ Fifth, run the program.
 
 Sixth, check through the results, and make sure that you understand them,
 compared to what you found in the first step.
+
+## License
+
+Released under the Apache License 2.0. See [LICENSE](LICENSE) file.
