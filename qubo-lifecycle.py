@@ -55,7 +55,7 @@ for i in range(1,4):
         elif j==i:
             row += str(ising_model[0][i]) + '\t'
         else:
-            row += str(ising_model[1][(i,j)]) + '\t'
+            row += str(ising_model[1][(j,i)]) + '\t'
     print(row)
 
 input()
