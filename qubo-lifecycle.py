@@ -71,7 +71,7 @@ embedding = {1:[1], 2:[2], 3:[3,4]}
 # Map our Ising model onto the embedding
 qubits = list(i for x in embedding.values() for i in x)
 target = nx.cycle_graph(qubits)
-th, tJ = dwave.embedding.embed_ising(ising_model[0], ising_model[1], embedding, target)
+th, tJ = dwave.embedding.embed_ising(ising_model[0], ising_model[1], embedding, target, chain_strength=24)
 
 print("\nQMI (unscaled):\n")
 
