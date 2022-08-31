@@ -42,6 +42,7 @@ qubo_model = BQM.from_qubo(Q)
 ising_model = qubo_model.to_ising()
 
 # Pause for the user to hit <enter> to continue
+print("[Hit <enter> to continue at each step]\n")
 input()
 print("\nConverting QUBO to Ising ...")
 
@@ -58,7 +59,6 @@ for i in range(1,4):
             row += str(ising_model[1][(j,i)]) + '\t'
     print(row)
 
-print("[Hit <enter> to continue at each step]\n")
 input()
 print("\nEmbedding logical problem into physical layout ...")
 
