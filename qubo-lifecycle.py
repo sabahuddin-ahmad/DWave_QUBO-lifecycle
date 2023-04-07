@@ -74,8 +74,9 @@ qubits = list(i for x in embedding.values() for i in x)
 target = nx.cycle_graph(qubits)
 th, tJ0 = dwave.embedding.embed_ising(ising_model[0], ising_model[1], embedding, target, chain_strength=24) # Generate the basic embedding 
 # Original embedding's tJ0 has some disordered terms (e.g. (2,1) instead of (1,2))
+# Create an ordered version of tJ0 to fit the quiz question format
 tJ={ (key if key[0]<key[1] else (key[1],key[0])):(tJ0[key]) for key in tJ0.keys() } 
-# Above line creates an ordered version of tJ0 to fit the quiz question format
+
 
 print("\nQMI (unscaled):\n")
 
