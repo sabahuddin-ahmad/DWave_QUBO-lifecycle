@@ -77,7 +77,6 @@ th, tJ_disordered = dwave.embedding.embed_ising(ising_model[0], ising_model[1], 
 # Create an ordered version of tJ_disordered to fit the quiz question format
 tJ={ (key if key[0]<key[1] else (key[1],key[0])):(tJ_disordered[key]) for key in tJ_disordered.keys() } 
 
-
 print("\nQMI (unscaled):\n")
 
 for i in range(1,5):
