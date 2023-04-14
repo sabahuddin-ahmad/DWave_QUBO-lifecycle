@@ -1,3 +1,7 @@
+[![Open in Leap IDE](
+  https://cdn-assets.cloud.dwavesys.com/shared/latest/badges/leapide.svg)](
+  https://ide.dwavesys.io/#https://github.com/dwave-training/QUBO-lifecycle)
+
 # QUBO-lifecycle
 Demonstrates what happens when you send a QUBO to the D-Wave QPU
 
