@@ -45,7 +45,7 @@ Write down your new QUBO, with the Lagrange parameter set to 24.
 
 Third, do the algebra, and write down your new QUBO.
 
-Fourth, in the program for this unit, replace the values on lines 24-29, with 
+Fourth, in the program for this unit, replace the entries of your Q matrix, with 
 the values from your new QUBO.
 
 Fifth, run the program.
